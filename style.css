@@ -1,0 +1,420 @@
+@charset "UTF-8";
+
+/*==================== GENERAL STYLING ====================*/
+:root {
+    --color-dark: #454c50;
+    --color-gray: #6e777c;
+    --color-light:#d7e6ef;
+    --color-white: #ffffff; 
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--color-dark);
+    animation-name: appear;
+    animation-duration: 2s;
+}
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }    
+}
+
+/*==================== COMMON ====================*/
+.title {
+    font-size: 1.5rem;
+    font-family: "Philosopher", serif;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 5rem;
+    font-family: "Philosopher", sans-serif;
+    margin-bottom: 1.25rem;
+}
+
+p {
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.bg:nth-child(odd) {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    padding-top: 32px;
+    padding-bottom: 21px;
+}
+
+.bg:nth-child(even) {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-light);
+    padding-top: 32px;
+    padding-bottom: 21px;
+}
+
+side {
+    width: 24%;
+    text-align: center;
+}
+
+main {
+    width: 72%;
+}
+
+#about, #research, #publications, #education, #contact {
+    padding: 2rem 4rem 10rem 1rem;
+    scroll-margin-top: 3.5rem;
+}
+
+.animation-box {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 1s ease;
+}
+
+/*==================== HEADER ====================*/
+header {
+    background: var(--color-dark);
+    padding: 1rem 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-menu {
+    display: none;
+}
+
+header a {
+    font-size: 1rem;
+    font-family: "Philosopher", serif;
+    font-weight: normal;
+    margin-left: var(--mgn-left);
+    color: var(--color-white);
+}
+
+header a:hover{
+    color: var(--color-light);
+}
+
+.main-nav {
+    display: flex;
+    margin-right: var(--mgn-right);
+}
+
+.main-nav li {
+    margin-left: 18px;
+    list-style: none;
+}
+
+/*==================== HERO ====================*/
+#hero {
+    position: relative;
+    scroll-margin-top: 3.9rem;
+    height: 100vh;
+}
+
+.hero-txt {
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-txt h1 {
+    animation-name: appear-pop;
+    animation-duration: 2s;
+}
+@keyframes appear-pop {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hero-sub {
+    animation-name: appear-pop3;
+    animation-duration: 2s;
+}
+@keyframes appear-pop3 {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    50% {
+            transform: translateY(-20px);    
+            opacity: 0;
+        }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-link {
+    animation-name: appear-pop2;
+    animation-duration: 2s;
+}
+@keyframes appear-pop2 {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    50% {
+            transform: translateY(20px);    
+            opacity: 0;
+        }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.hero-pattern {
+    position: absolute;
+    z-index: 1;
+    background-size: auto auto;
+    background-image: repeating-linear-gradient(0deg, transparent 1px, transparent 2px, #fff 2px, #fff 3px );
+}
+
+.hero-link a {
+    color: var(--color-dark);
+}
+
+.hero-link a:hover {
+    color: var(--color-white);
+}
+
+#hero img {
+    opacity: .5;
+    object-fit: cover;
+    object-position: center center;
+    filter: grayscale(100%);
+}
+
+.hero-txt, .hero-pattern, #hero img {
+    width: 100%;
+    height: 100vh;
+}
+
+/*==================== ABOUT ====================*/
+.bio {
+    text-align: justify;
+}
+
+/*==================== RESEARCH ====================*/
+#research ul li::before {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    display: inline-block;
+    margin: 0 8px 2px 0;
+    content: "\f518";
+    color: var(--color-dark);
+}
+
+#research ul, #education ul, #contact ul {
+    list-style: none;
+    list-style-position: outside;
+}
+
+#research ul li, #education ul li, #contact ul li {
+    margin-bottom: 1rem;
+}
+
+/*==================== PUBLICATIONS ====================*/
+.pub-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+
+.pub-p {
+    color: var(--color-gray);
+    margin-bottom: 0.5rem;
+}
+
+.btn-doi {
+    border: solid 2px var(--color-dark);
+    color: var(--color-dark);
+    padding: 2px 2px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.btn-doi:hover, #contact ul li a:hover {
+    background: var(--color-dark);
+    border: solid 2px var(--color-dark);
+    color: var(--color-white);
+}
+
+/*==================== EDUCATION ====================*/
+#education ul li::before {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    display: inline-block;
+    margin: 0 8px 2px 0;
+    content: "\f19d";
+    color: var(--color-dark);
+}
+
+#education p {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    margin-bottom: 0.2rem;
+}
+
+/*==================== CONTACT ====================*/
+.email {
+    margin-bottom: 1rem;
+}
+
+#contact ul {
+    display: flex;
+}
+
+#contact ul li {
+    margin-right: 10px;
+}
+
+#contact ul li a {
+    border: solid 2px var(--color-dark);
+    color: var(--color-dark);
+    padding: 2px 2px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/*==================== FOOTER ====================*/
+footer {
+    background: var(--color-dark);
+    text-align: center;
+    margin-top: 2%;
+}
+
+footer p {
+    color: var(--color-white);
+}
+
+
+/*==================== MOBILE SIZE ====================*/
+@media (max-width: 600px) {
+    .wrapper {
+        max-width: 1080px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 0;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .bg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 32px;
+        padding-bottom: 21px;
+    }
+
+    side, main {
+        width: 100%;
+        align-items: center;
+
+    }
+
+    #about, #research, #publications, #education, #contact {
+        padding: 2rem 4rem 10rem 4rem;
+        scroll-margin-top: 3.2rem;
+    }
+
+    .btn-menu {
+        display: block;
+        font-family: "Philosopher", sans-serif;
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        border: 1px solid var(--color-white);
+        border-radius: 5px;
+        color: var(--color-white);
+        padding: .25rem .5rem;
+    }
+
+    .btn-menu:hover {
+        background-color: var(--color-white);
+        color: var(--font-color);
+    }
+
+    .main-nav {
+        background-color: var(--color-dark);
+        width: 0;
+        position: absolute;
+        z-index: 2;
+        top: 50px;
+        right: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: .5s;
+    }
+
+    .main-nav.open-menu {
+        width: 100%;
+    }
+
+    .main-nav li {
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+
+    .main-nav a {
+        display: block;
+    }
+
+    #contact ul li a {
+        font-size: 0.8rem;    
+    }
+}
