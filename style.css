@@ -43,6 +43,7 @@ h1 {
 }
 
 p {
+    font-size: 1rem;
     line-height: 1.7;
 }
 
@@ -55,26 +56,21 @@ a {
 }
 
 .wrapper {
-    max-width: 1080px;
+    max-width: 1920px;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
 }
 
+.bg {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+}
 .bg:nth-child(odd) {
-    display: flex;
-    justify-content: space-between;
     background-color: var(--color-white);
-    padding-top: 32px;
-    padding-bottom: 21px;
 }
-
 .bg:nth-child(even) {
-    display: flex;
-    justify-content: space-between;
     background-color: var(--color-light);
-    padding-top: 32px;
-    padding-bottom: 21px;
 }
 
 side {
@@ -93,14 +89,14 @@ main {
 
 .animation-box {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-1.5rem);
     transition: 1s ease;
 }
 
 /*==================== HEADER ====================*/
 header {
-    background: var(--color-dark);
-    padding: 1rem 1rem;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 1rem 2rem;
     position: fixed;
     width: 100%;
     z-index: 3;
@@ -119,21 +115,19 @@ header a {
     font-size: 1rem;
     font-family: "Philosopher", serif;
     font-weight: normal;
-    margin-left: var(--mgn-left);
-    color: var(--color-white);
+    color: var(--color-gray);
 }
 
 header a:hover{
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .main-nav {
     display: flex;
-    margin-right: var(--mgn-right);
 }
 
 .main-nav li {
-    margin-left: 18px;
+    margin-left: 1.5rem;
     list-style: none;
 }
 
@@ -161,7 +155,7 @@ header a:hover{
 }
 @keyframes appear-pop {
     0% {
-        transform: translateY(20px);
+        transform: translateY(1.5rem);
     }
     100% {
         transform: translateY(0);
@@ -174,11 +168,11 @@ header a:hover{
 }
 @keyframes appear-pop3 {
     0% {
-        transform: translateY(-20px);
+        transform: translateY(-1.5rem);
         opacity: 0;
     }
     50% {
-            transform: translateY(-20px);    
+            transform: translateY(-1.5rem);
             opacity: 0;
         }
     100% {
@@ -193,11 +187,11 @@ header a:hover{
 }
 @keyframes appear-pop2 {
     0% {
-        transform: translateY(20px);
+        transform: translateY(1.5rem);
         opacity: 0;
     }
     50% {
-            transform: translateY(20px);    
+            transform: translateY(1.5rem);    
             opacity: 0;
         }
     100% {
@@ -222,7 +216,7 @@ header a:hover{
 }
 
 #hero img {
-    opacity: .5;
+    opacity: .6;
     object-fit: cover;
     object-position: center center;
     filter: grayscale(100%);
@@ -243,7 +237,7 @@ header a:hover{
     font-family: "Font Awesome 5 Pro";
     font-weight: 900;
     display: inline-block;
-    margin: 0 8px 2px 0;
+    margin: 0 .5rem .125rem 0;
     content: "\f518";
     color: var(--color-dark);
 }
@@ -270,18 +264,18 @@ header a:hover{
 }
 
 .btn-doi {
-    border: solid 2px var(--color-dark);
+    border: solid .125rem var(--color-dark);
     color: var(--color-dark);
-    padding: 2px 2px;
+    padding: .125rem .125rem;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: .25rem;
     display: inline-block;
     margin-bottom: 2rem;
 }
 
 .btn-doi:hover, #contact ul li a:hover {
     background: var(--color-dark);
-    border: solid 2px var(--color-dark);
+    border: solid .125rem var(--color-dark);
     color: var(--color-white);
 }
 
@@ -290,7 +284,7 @@ header a:hover{
     font-family: "Font Awesome 5 Pro";
     font-weight: 900;
     display: inline-block;
-    margin: 0 8px 2px 0;
+    margin: 0 .5rem .125rem 0;
     content: "\f19d";
     color: var(--color-dark);
 }
@@ -311,32 +305,31 @@ header a:hover{
 }
 
 #contact ul li {
-    margin-right: 10px;
+    margin-right: .5rem;
 }
 
 #contact ul li a {
-    border: solid 2px var(--color-dark);
+    border: solid .125rem var(--color-dark);
     color: var(--color-dark);
-    padding: 2px 2px;
+    padding: .125rem .125rem;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: .25rem;
     display: inline-block;
 }
 
 /*==================== FOOTER ====================*/
 footer {
-    background: var(--color-dark);
     text-align: center;
-    margin-top: 2%;
-}
-
-footer p {
-    color: var(--color-white);
+    margin-top: 1rem;
+    color: var(--color-dark);
 }
 
 
 /*==================== MOBILE SIZE ====================*/
 @media screen and (max-width: 600px) {
+    html {
+        font-size: 75%;
+    }
     .wrapper {
         max-width: 600px;
         width: 100%;
@@ -349,15 +342,13 @@ footer p {
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 3rem;
+        margin-bottom: 3rem;
     }
 
     .bg {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding-top: 32px;
-        padding-bottom: 21px;
     }
 
     side, main {
@@ -375,25 +366,25 @@ footer p {
         display: block;
         font-family: "Philosopher", sans-serif;
         position: absolute;
-        top: 10px;
-        right: 12px;
-        border: 1px solid var(--color-white);
-        border-radius: 5px;
-        color: var(--color-white);
+        top: 1rem;
+        right: 1rem;
+        border: .125rem solid var(--color-gray);
+        border-radius: .25rem;
+        color: var(--color-gray);
         padding: .25rem .5rem;
     }
 
     .btn-menu:hover {
-        background-color: var(--color-white);
-        color: var(--font-color);
+        background-color: var(--color-gray);
+        color: var(--color-white);
     }
 
     .main-nav {
-        background-color: var(--color-dark);
+        background-color: var(--color-gray);
         width: 0;
         position: absolute;
         z-index: 2;
-        top: 50px;
+        top: 4rem;
         right: 0;
         overflow: hidden;
         display: flex;
@@ -412,9 +403,15 @@ footer p {
 
     .main-nav a {
         display: block;
+        color: var(--color-white);
+    }
+
+    #contact, #contact ul {
+        text-align: center;
+        justify-content: center;
     }
 
     #contact ul li a {
-        font-size: 0.8rem;    
+        font-size: 0.8rem;
     }
 }
