@@ -336,9 +336,9 @@ footer p {
 
 
 /*==================== MOBILE SIZE ====================*/
-@media (max-width: 960px) {
+@media (max-width: 600px) {
     .wrapper {
-        max-width: 1080px;
+        max-width: 600px;
         width: 100%;
         margin: 0 auto;
         padding: 0 0;
