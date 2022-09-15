@@ -328,7 +328,7 @@ footer {
 /*==================== MOBILE SIZE ====================*/
 @media screen and (max-width: 600px) {
     html {
-        font-size: 75%;
+        font-size: 87.5%;
     }
     .wrapper {
         max-width: 600px;
